@@ -1,0 +1,35 @@
+.hand {
+  height: 100%;
+  aspect-ratio: 1;
+  background-image: url("../../assets/right-facing-fist.png");
+  background-size: 90%;
+  background-position: 200% 0;
+  background-repeat: no-repeat;
+  animation: user-back-and-forth 0.5s ease-in infinite;
+}
+
+.oponent__hand {
+  animation: oponent-back-and-forth 0.5s ease-in infinite;
+}
+
+@keyframes user-back-and-forth {
+  0%,
+  100% {
+    transform: rotate(90deg) translateX(0);
+  }
+
+  50% {
+    transform: rotate(90deg) translateX(50%);
+  }
+}
+
+@keyframes oponent-back-and-forth {
+  0%,
+  100% {
+    transform: rotate(-90deg) translateX(0);
+  }
+
+  50% {
+    transform: rotate(-90deg) translateX(50%);
+  }
+}
