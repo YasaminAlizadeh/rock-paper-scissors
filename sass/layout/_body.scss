@@ -1,0 +1,9 @@
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+  justify-items: center;
+  padding: clamp(0.5rem, 5vw, 1.5rem);
+  background-color: $light-color;
+}
