@@ -35,6 +35,7 @@ const setOptions = () => {
       [...options].map((option) => option.classList.add("option--disabled"));
 
       setUserChoice(state);
+      startGame();
     };
 
     optionsContainer.appendChild(optionCard);
@@ -49,6 +50,18 @@ const setOponentChoice = () => {
 };
 
 const setUserChoice = (option) => (userChoice = option);
+
+const startGame = () => {
+  [...hands].map(
+    (hand) =>
+      (hand.style.backgroundImage = `url('../assets/up-facing-fist.png')`)
+  );
+  [...hands].map((hand) => hand.classList.remove("loser"));
+  [...hands].map((hand) => hand.classList.add("hand--moving"));
+
+  setOponentChoice();
+  startCountDown();
+};
 
 const revealChoices = () => {
   userHand.style.backgroundImage = `url('${userChoice.image}')`;
