@@ -79,3 +79,29 @@ const showWinner = () => {
     : oponentHand.classList.add("loser");
 };
 
+const setWinner = () => {
+  switch (userChoice.label) {
+    case "rock":
+      if (oponentChoice.label === "paper") isUserWinner = false;
+      else if (oponentChoice.label === "scissors") isUserWinner = true;
+      else isUserWinner = null;
+      break;
+
+    case "paper":
+      if (oponentChoice.label === "rock") isUserWinner = true;
+      else if (oponentChoice.label === "scissors") isUserWinner = false;
+      else isUserWinner = null;
+      break;
+
+    case "scissors":
+      if (oponentChoice.label === "paper") isUserWinner = true;
+      else if (oponentChoice.label === "rock") isUserWinner = false;
+      else isUserWinner = null;
+      break;
+
+    default:
+      break;
+  }
+
+  showWinner();
+};
