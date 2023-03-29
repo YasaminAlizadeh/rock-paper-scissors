@@ -105,3 +105,20 @@ const setWinner = () => {
 
   showWinner();
 };
+
+const startCountDown = () => {
+  let interval = setInterval(() => {
+    if (currentState < 3) {
+      boardText.innerText = `${states[currentState].label}!`;
+      currentState++;
+    }
+  }, 500);
+
+  setTimeout(() => {
+    clearInterval(interval);
+    revealChoices();
+    setWinner();
+    updateScore();
+    revertChanges();
+  }, 2000);
+};
