@@ -181,6 +181,7 @@ main {
 
 .options {
   width: 100%;
+  height: max-content;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.5rem;
