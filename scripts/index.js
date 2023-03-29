@@ -6,6 +6,9 @@ const states = [
 
 let currentState = 0;
 
+let userChoice = null;
+let oponentChoice = null;
+
 const optionsContainer = document.querySelector(".options");
 const setOptions = () => {
   states.map((state) => {
@@ -18,6 +21,7 @@ const setOptions = () => {
     optionCard.onclick = () => {
       [...options].map((option) => option.classList.add("option--disabled"));
 
+      setUserChoice(state);
     };
 
     optionsContainer.appendChild(optionCard);
@@ -26,4 +30,10 @@ const setOptions = () => {
 };
 
 setOptions();
+
+const setOponentChoice = () => {
+  oponentChoice = states[Math.floor(Math.random() * 3)];
+};
+
+const setUserChoice = (option) => (userChoice = option);
 
