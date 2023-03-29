@@ -15,6 +15,7 @@ let oponentPoints = 0;
 let isUserWinner = null;
 
 const optionsContainer = document.querySelector(".options");
+const boardText = document.querySelector("#board-text");
 const hands = document.querySelectorAll(".hand");
 const userHand = document.querySelector("#user-hand");
 const oponentHand = document.querySelector("#oponent-hand");
@@ -52,6 +53,14 @@ const setUserChoice = (option) => (userChoice = option);
 const revealChoices = () => {
   userHand.style.backgroundImage = `url('${userChoice.image}')`;
   oponentHand.style.backgroundImage = `url('${oponentChoice.image}')`;
+};
+
+const revertChanges = () => {
+  currentState = 0;
+  boardText.innerText = "";
+
+  [...hands].map((hand) => hand.classList.remove("hand--moving"));
+  [...options].map((option) => option.classList.remove("option--disabled"));
 };
 
 const updateScore = () => {
