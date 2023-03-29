@@ -1,6 +1,12 @@
 main {
   width: min(100%, 50rem);
   display: grid;
-  grid-template-rows: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-rows: max-content 1fr;
   gap: 0.5rem;
+}
+
+@media screen and (min-width: 668px) {
+  main {
+    grid-template-rows: minmax(0, 2fr) minmax(0, 1fr);
+  }
 }
