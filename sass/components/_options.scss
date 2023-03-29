@@ -18,24 +18,13 @@
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-}
-
-.option--fist {
-  background-image: url("../../assets/raised-fist.png");
-}
-
-.option--hand {
-  background-image: url("../../assets/raised-hand.png");
-}
-
-.option--victory {
-  background-image: url("../../assets/victory-hand.png");
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
 }
 
 .option:hover {
   transform: translateY(-10%);
-  background-color: $accent-color;
+  background-color: rgba($accent-color, 0.1);
   animation: wiggle 0.45s infinite;
 }
 
@@ -47,10 +36,10 @@
 @keyframes wiggle {
   0%,
   100% {
-    transform: rotate(2deg);
+    transform: rotate(1deg);
   }
 
   50% {
-    transform: rotate(-2deg);
+    transform: rotate(-1deg);
   }
 }
