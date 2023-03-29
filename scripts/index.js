@@ -72,3 +72,10 @@ const updateScore = () => {
   oponentScore.innerText = oponentPoints;
 };
 
+const showWinner = () => {
+  if (isUserWinner === null) return;
+  !isUserWinner
+    ? userHand.classList.add("loser")
+    : oponentHand.classList.add("loser");
+};
+
