@@ -1,7 +1,7 @@
 const states = [
-  { label: "rock", image: "../assets/raised-fist.png" },
-  { label: "paper", image: "../assets/raised-hand.png" },
-  { label: "scissors", image: "../assets/victory-hand.png" },
+  { label: "rock", image: "https://i.ibb.co/jf9KZ0F/raised-fist.png" },
+  { label: "paper", image: "https://i.ibb.co/6mD1PXY/raised-hand.png" },
+  { label: "scissors", image: "https://i.ibb.co/6BWBCRK/victory-hand.png" },
 ];
 
 let currentState = 0;
@@ -54,7 +54,7 @@ const setUserChoice = (option) => (userChoice = option);
 const startGame = () => {
   [...hands].map(
     (hand) =>
-      (hand.style.backgroundImage = `url('../assets/up-facing-fist.png')`)
+      (hand.style.backgroundImage = `url('https://i.ibb.co/frgrPjb/up-facing-fist.png')`)
   );
   [...hands].map((hand) => hand.classList.remove("loser"));
   [...hands].map((hand) => hand.classList.add("hand--moving"));
