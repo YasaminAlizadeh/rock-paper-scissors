@@ -10,6 +10,9 @@ let userChoice = null;
 let oponentChoice = null;
 
 const optionsContainer = document.querySelector(".options");
+const hands = document.querySelectorAll(".hand");
+const userHand = document.querySelector("#user-hand");
+const oponentHand = document.querySelector("#oponent-hand");
 const setOptions = () => {
   states.map((state) => {
     const optionCard = document.createElement("div");
@@ -36,4 +39,9 @@ const setOponentChoice = () => {
 };
 
 const setUserChoice = (option) => (userChoice = option);
+
+const revealChoices = () => {
+  userHand.style.backgroundImage = `url('${userChoice.image}')`;
+  oponentHand.style.backgroundImage = `url('${oponentChoice.image}')`;
+};
 
